@@ -1,0 +1,17 @@
+.headerContainer{
+    background-color: #9B24B3;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+.headerInfo{    
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+}
+
+.headerLink:hover{
+    cursor:pointer;
+    color: #B1FF4D;
+}
