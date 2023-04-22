@@ -3,15 +3,63 @@
     margin: 0px;
     padding: 0px;
     color: white;
+    width:100%;
+    height: 7vh;
 }
 
-.headerInfo{    
-    padding: 10px;
+.headerInfo{
     display: grid;
-    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-columns: 10fr 2fr 2fr 1fr;
+    padding: 1%;
+    font-size: 18px;
 }
 
-.headerLink:hover{
+.headerLink{
     cursor:pointer;
-    color: #B1FF4D;
+}
+
+
+.infoUserContainer{
+}
+
+.infoUserBttn{
+    font-size: 2rem;
+    background: none;
+}
+
+.infoUserCard {
+    background-color: white;
+    width: 15vw;
+    height: 15vh;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;   
+    text-align: center; 
+    display: grid;
+}
+
+.userName{
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.link:hover{
+    color:#9B24B3;
+    cursor: pointer;
+}
+
+.logoffBttn{
+    border: 1px solid rgba(116, 112, 112, 0.638);
+    box-shadow: none;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    background-color: none;
+    background: none;
+    width:75%;
+    margin: auto auto;
+}
+
+.logoffBttn:hover{
+    cursor: pointer;
+    background-color: green;
+    color: white;
 }
