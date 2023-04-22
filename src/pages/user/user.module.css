@@ -107,17 +107,32 @@ hr{
     margin: 10px;
 }
 
-.cardTitulo {
-    margin-top: 5px;
-    margin-bottom: 10px;
+.cancelOrderBttn{
+    margin-left: 2vw;
+    border: none;
+    border-radius: 10px;
+    background-color: #9B24B3;
+    cursor: pointer;
+    color: white;
+
 }
 
-.cardTitulo>b:hover {
-    color: blue;
+.cardTitulo {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
 }
 
 .cardDetalhes {
     margin-bottom: 10px;
     display: grid;
     grid-auto-flow: column;
+}
+
+.cardDetalhes > span{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.cardDetalhes > img{
+    width: 4vw;
+    object-fit: contain;
 }
