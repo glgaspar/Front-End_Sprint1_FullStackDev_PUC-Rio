@@ -1,0 +1,50 @@
+.loginContainer{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.loginForm{
+    margin:4vw;
+
+}
+
+.loginForm > h3{
+    text-align: center;
+}
+
+.formGroup{
+    width: 100%;
+    display: grid;
+    margin-top: 3vh;
+}
+
+.formGroup > label{margin-left:1vw;}
+
+.formGroup > input{
+    width: 100%;
+    height: 5vh;
+    border-radius:10px;
+    border:1px solid rgba(0, 0, 0, 0.3);
+}
+
+.formGroup > textarea{
+    width: 100%;
+    height: 20vh;
+    border-radius:10px;
+    border:1px solid rgba(0, 0, 0, 0.3);
+}
+
+.registerUserFormContainer{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.registerUserForm{
+    margin:4vw;
+}
+
+.registerUserForm > h3{
+    text-align: center;
+}
