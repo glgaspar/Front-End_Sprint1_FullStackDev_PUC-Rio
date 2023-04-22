@@ -1,0 +1,41 @@
+.homeContainer{
+    padding: 2vh 3vw 2vh 3vw;
+    display: grid;
+}
+
+.categorySection{
+    margin-bottom: 3vh;
+
+}
+
+.categoryData{
+    margin-top: 2vw;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.itenCard{
+    margin-right: 1vw;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 3%;
+    text-align: center;
+    display: grid;
+    cursor: pointer;
+}
+
+.itenCard:hover{
+    border: 1px solid #9B24B3;
+}
+
+.homeProductImg{
+    height: 15vh;
+    width:auto
+
+}
+
+.homeProductImg > img{
+    height: 15vh;
+    width:auto;
+    object-fit: contain;
+}
