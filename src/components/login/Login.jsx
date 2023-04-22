@@ -11,13 +11,12 @@ export default function Login() {
 				email: event.target.email.value,
 				pssw: event.target.password.value,
 			};
-			console.log(data);
 			APIPost("/login", data).then((data) => {
-				console.log(data.data);
+				console.log(data);
 				if (data.data.message.message === "Login successful") {
 					sessionStorage.setItem("sprint1", JSON.stringify(data.data.user));
 					window.location.reload();
-				} else {
+				} else if (data.status===400){
 					alert("Usuário não encontrado");
 				}
 			});
