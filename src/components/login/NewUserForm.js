@@ -21,13 +21,14 @@ export default function NewUserForm() {
 			};
 			console.log(data);
 			APIPost("/newUser", data).then((data) => {
-				console.log(data.data);
-				if (data.data.message === "Register successful") {
-					closePopup();
-					alert("Usuário cadatrado com sucesso");
-				} else if (data.data.message === "User alredy in database") {
-					alert("Usuário já cadatrado");
-				} else {
+				try {
+					if (data.data.message === "Register successful") {
+						closePopup();
+						alert("Usuário cadatrado com sucesso");
+					} else if (data.data.message === "User alredy in database") {
+						alert("Usuário já cadatrado");
+					}
+				} catch {
 					alert("Ocorreu um erro no registro");
 				}
 			});
@@ -36,7 +37,11 @@ export default function NewUserForm() {
 	return (
 		<Popup
 			ref={ref}
-			trigger={<button type="button">Registrar</button>}
+			trigger={
+				<button className={classes.loginBttn} type="button">
+					Registrar
+				</button>
+			}
 			modal
 			nested
 		>
@@ -66,7 +71,11 @@ export default function NewUserForm() {
 						<label htmlFor="address">Endereço</label>
 						<textarea type="address" name="address" required></textarea>
 					</div>
-					<button type="submit">Cadastrar</button>
+					<div className={classes.formBttns}>
+						<button className={classes.loginBttn} type="submit">
+							Cadastrar
+						</button>
+					</div>
 				</form>
 			</div>
 		</Popup>

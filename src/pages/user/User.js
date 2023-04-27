@@ -5,16 +5,23 @@ import { APIGet, APIPut } from "../../components/api/Api";
 export default function User() {
 	const [orders, setOrders] = useState();
 	const user = JSON.parse(sessionStorage.getItem("sprint1"));
+
+	// Load user data
 	useEffect(() => {
 		console.log(user.email);
 		APIGet(`/purchases?userEmail=${user.email}`).then((response) => {
-			console.log(response);
 			setOrders(response.data.orders);
 		});
 	}, []);
 
 	const cancelOrder = (order) => {
-		APIPut(`cancelOrder?orderId=${order}`);
+		APIPut(`cancelOrder?orderId=${order}`).then((response) => {
+			if (response.data.message === "Order canceled") {
+				alert("Pedido cancelado com sucesso.");
+			} else {
+				alert("Algo de errado aconteceu. Por favor tente novamente.");
+			}
+		});
 	};
 	return (
 		<div className={classes.containerPedido}>

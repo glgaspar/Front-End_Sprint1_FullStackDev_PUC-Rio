@@ -6,15 +6,16 @@ export default function Product() {
 	const [iten, setIten] = useState();
 	const [orderAmount, setOrderAmount] = useState(1);
 
+	// Load data for given product Id in url
 	useEffect(() => {
 		APIGet(
 			`/productDetail?productId=${window.location.href.split("/produto?")[1]}`
 		).then((data) => {
-			console.log(data.data);
 			setIten(data.data);
 		});
 	}, []);
 
+	// Handle + and - clicks for item amount
 	function handleSetAmount(operation) {
 		if (orderAmount + operation > 0) {
 			setOrderAmount((orderAmount) => (orderAmount += operation));
@@ -31,7 +32,13 @@ export default function Product() {
 				amount: event.target.amount.value,
 				unitPrice: iten.unitPrice,
 			};
-			APIPost("/newPurchase", data);
+			APIPost("/newPurchase", data).then((response) => {
+				if (response.data.message === "Purchase successful") {
+					alert("Compra realizada com sucesso.");
+				} else {
+					alert("Algo de errado aconteceu. Por favor tente novamente.");
+				}
+			});
 		} else {
 			alert("É necessário fazer login para poder realizar uma compra.");
 		}
@@ -42,7 +49,13 @@ export default function Product() {
 			<div className={classes.columnsContainer}>
 				<div className={classes.productColumn}>
 					<div className={classes.productImgContainer}>
-						{iten && <img className={classes.productImage} src={iten.img} alt={iten.name} />}
+						{iten && (
+							<img
+								className={classes.productImage}
+								src={iten.img}
+								alt={iten.name}
+							/>
+						)}
 					</div>
 				</div>
 				<div className={classes.productColumn}>
@@ -79,6 +92,7 @@ export default function Product() {
 										type="number"
 										value={orderAmount}
 										min={1}
+										onChange={console.log(22)}
 									/>
 									<span
 										className={classes.orderAmountSetter}

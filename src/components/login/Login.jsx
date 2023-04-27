@@ -12,12 +12,15 @@ export default function Login() {
 				pssw: event.target.password.value,
 			};
 			APIPost("/login", data).then((data) => {
-				console.log(data);
-				if (data.data.message.message === "Login successful") {
-					sessionStorage.setItem("sprint1", JSON.stringify(data.data.user));
-					window.location.reload();
-				} else if (data.status===400){
-					alert("Usuário não encontrado");
+				try {
+					if (data.data.message?.message === "Login successful") {
+						sessionStorage.setItem("sprint1", JSON.stringify(data.data.user));
+						window.location.reload();
+					} else if (data.status === 400) {
+						alert("Usuário não encontrado");
+					}
+				} catch {
+					alert("Algo deu errado. Por favor tente novamente.");
 				}
 			});
 		}
@@ -35,8 +38,12 @@ export default function Login() {
 					<label htmlFor="password">Senha</label>
 					<input type="password" name="password" required></input>
 				</div>
-				<button type="submit">Entrar</button>
-				<NewUserForm />
+				<div className={classes.formBttns}>
+					<button className={classes.loginBttn} type="submit">
+						Entrar
+					</button>
+					<NewUserForm />
+				</div>
 			</form>
 		</div>
 	);
