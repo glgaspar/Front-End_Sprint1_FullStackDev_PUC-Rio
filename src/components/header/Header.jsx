@@ -17,12 +17,7 @@ export default function Header() {
 			<div className={classes.headerInfo}>
 				<div className={classes.logoContainer}>
 					<p onClick={() => navigateRoute("home")}>Logo muito legal</p>
-				</div>
-				<div>
-					<span className={classes.headerLink}>
-						<b onClick={() => navigateRoute("sobre")}>Sobre</b>
-					</span>
-				</div>
+				</div>				
 				<div>
 					<span className={classes.headerLink}>
 						<b onClick={() => navigateRoute("contato")}>Contato</b>

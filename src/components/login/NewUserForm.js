@@ -21,8 +21,9 @@ export default function NewUserForm() {
 			};
 			console.log(data);
 			APIPost("/newUser", data).then((data) => {
+				console.log(data.data)
 				try {
-					if (data.data.message === "Register successful") {
+					if (data.data.message === "register successful") {
 						closePopup();
 						alert("Usuário cadatrado com sucesso");
 					} else if (data.data.message === "User alredy in database") {

@@ -9,7 +9,7 @@
 
 .headerInfo{
     display: grid;
-    grid-template-columns: 10fr 2fr 2fr 1fr;
+    grid-template-columns: 10fr 2fr 1fr;
     padding: 1%;
     font-size: 18px;
 }
