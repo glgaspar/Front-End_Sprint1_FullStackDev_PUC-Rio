@@ -6,7 +6,7 @@ Essa aplicação foi escrita usando React e se comunica com o Front-end desenvol
 
 ## Dependências
 
-As dependências do programa estão contidas no arquivo requirements.txt e pode ser instaladas com o comando 
+As dependências do programa estão contidas nos arquivos package.json e package-lock.json e podem ser instaladas com o comando 
 
     npm install
 
@@ -14,3 +14,5 @@ As dependências do programa estão contidas no arquivo requirements.txt e pode 
 Para iniciar o serviço em http://localhost:3000 é necessário executar o comando:
 
     npm start
+
+Ambos os comandos de instalação de dependências e execução devem ser executados no diretório raiz da aplicação.
